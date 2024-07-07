@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "(?:apt-get install) (?<depName>.+?)=(?<currentValue>.+?)(\\s*)(&&)?(\\s*)(\\\\?)$"
+      ],
+      "versioningTemplate": "loose",
+      "datasourceTemplate": "deb"
+    }
+  ]
+}
