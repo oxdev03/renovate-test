@@ -5,10 +5,9 @@
       "customType": "regex",
       "fileMatch": ["^Dockerfile$"],
       "matchStrings": [
-        "(?:apt-get install) (?<depName>.+?)=(?<currentValue>.+?)(\\s*)(&&)?(\\s*)(\\\\?)$"
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
       ],
-      "versioningTemplate": "loose",
-      "datasourceTemplate": "deb"
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ]
 }
