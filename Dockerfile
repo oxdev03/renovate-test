@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-# renovate: datasource=repology depName=gcc-11 versioning=loose
+# renovate: datasource=deb depName=gcc-11 versioning=loose
 ENV GCC_VERSION="11.2.0-19"
 # renovate: datasource=deb depName=musl-dev versioning=loose
 ENV MUSL_DEV_VERSION="1.1.24-r8"
